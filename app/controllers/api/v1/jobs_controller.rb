@@ -1,51 +1,52 @@
-class JobsController < ApplicationController
-  before_action :set_job, only: %i[ show update destroy ]
+class Api::V1::JobsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_api_v1_job, only: %i[ show update destroy ]
 
-  # GET /jobs
+  # GET /api/v1/jobs
   def index
-    @jobs = Job.all
+    @api_v1_jobs = Api::V1::Job.all
 
-    render json: @jobs
+    render json: @api_v1_jobs
   end
 
-  # GET /jobs/1
+  # GET /api/v1/jobs/1
   def show
-    render json: @job
+    render json: @api_v1_job
   end
 
-  # POST /jobs
+  # POST /api/v1/jobs
   def create
-    @job = Job.new(job_params)
+    @api_v1_job = Api::V1::Job.new(api_v1_job_params)
 
-    if @job.save
-      render json: @job, status: :created, location: @job
+    if @api_v1_job.save
+      render json: @api_v1_job, status: :created, location: @api_v1_job
     else
-      render json: @job.errors, status: :unprocessable_entity
+      render json: @api_v1_job.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /jobs/1
+  # PATCH/PUT /api/v1/jobs/1
   def update
-    if @job.update(job_params)
-      render json: @job
+    if @api_v1_job.update(api_v1_job_params)
+      render json: @api_v1_job
     else
-      render json: @job.errors, status: :unprocessable_entity
+      render json: @api_v1_job.errors, status: :unprocessable_entity
     end
   end
 
-  # DELETE /jobs/1
+  # DELETE /api/v1/jobs/1
   def destroy
-    @job.destroy
+    @api_v1_job.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_job
-      @job = Job.find(params[:id])
+    def set_api_v1_job
+      @api_v1_job = Api::V1::Job.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def job_params
-      params.require(:job).permit(:title, :description, :expires_date, :company_id)
+    def api_v1_job_params
+      params.require(:api_v1_job).permit(:title, :description, :expires_date, :company_id)
     end
 end

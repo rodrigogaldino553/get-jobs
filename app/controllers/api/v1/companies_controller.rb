@@ -1,51 +1,52 @@
-class CompaniesController < ApplicationController
-  before_action :set_company, only: %i[ show update destroy ]
+class Api::V1::CompaniesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_api_v1_company, only: %i[ show update destroy ]
 
-  # GET /companies
+  # GET /api/v1/companies
   def index
-    @companies = Company.all
+    @api_v1_companies = Api::V1::Company.all
 
-    render json: @companies
+    render json: @api_v1_companies
   end
 
-  # GET /companies/1
+  # GET /api/v1/companies/1
   def show
-    render json: @company
+    render json: @api_v1_company
   end
 
-  # POST /companies
+  # POST /api/v1/companies
   def create
-    @company = Company.new(company_params)
+    @api_v1_company = Api::V1::Company.new(api_v1_company_params)
 
-    if @company.save
-      render json: @company, status: :created, location: @company
+    if @api_v1_company.save
+      render json: @api_v1_company, status: :created, location: @api_v1_company
     else
-      render json: @company.errors, status: :unprocessable_entity
+      render json: @api_v1_company.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /companies/1
+  # PATCH/PUT /api/v1/companies/1
   def update
-    if @company.update(company_params)
-      render json: @company
+    if @api_v1_company.update(api_v1_company_params)
+      render json: @api_v1_company
     else
-      render json: @company.errors, status: :unprocessable_entity
+      render json: @api_v1_company.errors, status: :unprocessable_entity
     end
   end
 
-  # DELETE /companies/1
+  # DELETE /api/v1/companies/1
   def destroy
-    @company.destroy
+    @api_v1_company.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_company
-      @company = Company.find(params[:id])
+    def set_api_v1_company
+      @api_v1_company = Api::V1::Company.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def company_params
-      params.require(:company).permit(:name, :description, :contact)
+    def api_v1_company_params
+      params.require(:api_v1_company).permit(:name, :description, :contact)
     end
 end
