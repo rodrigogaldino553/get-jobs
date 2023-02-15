@@ -1,6 +1,6 @@
 require "test_helper"
 
-class JobTest < ActiveSupport::TestCase
+class Api::V1::CompanyTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

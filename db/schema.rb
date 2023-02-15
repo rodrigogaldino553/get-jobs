@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_15_160655) do
-  create_table "companies", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2023_02_15_161406) do
+  create_table "api_v1_companies", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "contact"
@@ -19,15 +19,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_160655) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "jobs", force: :cascade do |t|
+  create_table "api_v1_jobs", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.date "expires_date"
     t.integer "company_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_jobs_on_company_id"
+    t.index ["company_id"], name: "index_api_v1_jobs_on_company_id"
   end
 
-  add_foreign_key "jobs", "companies"
+  add_foreign_key "api_v1_jobs", "companies"
 end
