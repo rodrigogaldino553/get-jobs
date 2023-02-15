@@ -1,0 +1,8 @@
+Proximos passos
+
+	- ver o relacionamento companies jobs
+	- revisao geral pra ver se ta tudo funcionando
+		* se e possivel criar uma company
+		* se uma company consegue criar um job
+		* se consegue excluir o job...
+		* se um use consegui vizualizar um job e pegar a informação de contato
