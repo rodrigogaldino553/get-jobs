@@ -131,6 +131,8 @@ GEM
     orm_adapter (0.5.0)
     puma (5.6.5)
       nio4r (~> 2.0)
+    pundit (2.3.0)
+      activesupport (>= 3.0.0)
     racc (1.6.2)
     rack (2.2.6.2)
     rack-cors (2.0.0)
@@ -169,6 +171,7 @@ GEM
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
+    rolify (6.0.1)
     sqlite3 (1.6.0-x86_64-linux)
     thor (1.2.1)
     timeout (0.3.1)
@@ -195,8 +198,10 @@ DEPENDENCIES
   devise (~> 4.8)
   devise-jwt (~> 0.10.0)
   puma (~> 5.0)
+  pundit (~> 2.3)
   rack-cors (~> 2.0)
   rails (~> 7.0.4, >= 7.0.4.2)
+  rolify (~> 6.0)
   sqlite3 (~> 1.4)
   tzinfo-data
 
