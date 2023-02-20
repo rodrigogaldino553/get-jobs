@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  title: MyString
   description: MyText
-  contact: MyString
+  limit_date: 2023-02-20
+  user_id: one
 
 two:
-  name: MyString
+  title: MyString
   description: MyText
-  contact: MyString
+  limit_date: 2023-02-20
+  user_id: two
