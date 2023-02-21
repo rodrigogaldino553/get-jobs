@@ -1,10 +1,5 @@
 class Job < ApplicationRecord
-  belongs_to :user_id
+  belongs_to :user
 
-  private
-
-    def generate_permalink
-      # instead use the primary key, use the permalink field to show jbs to users with more privacity
-      self.permalink = SecureRandom.hex(8)
-    end
+  # add validation to permit only users with company role to create jobs
 end

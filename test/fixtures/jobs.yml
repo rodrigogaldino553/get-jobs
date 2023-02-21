@@ -4,10 +4,10 @@ one:
   title: MyString
   description: MyText
   limit_date: 2023-02-20
-  user_id: one
+  user: one
 
 two:
   title: MyString
   description: MyText
   limit_date: 2023-02-20
-  user_id: two
+  user: two

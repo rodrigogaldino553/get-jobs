@@ -56,3 +56,5 @@ gem "devise", "~> 4.8"
 gem "rolify", "~> 6.0"
 
 gem "pundit", "~> 2.3"
+
+gem "pry-byebug", "~> 3.10"

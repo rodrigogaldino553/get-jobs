@@ -12,7 +12,7 @@ class JobsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create job" do
     assert_difference("Job.count") do
-      post jobs_url, params: { job: { description: @job.description, limit_date: @job.limit_date, title: @job.title, user_id_id: @job.user_id_id } }, as: :json
+      post jobs_url, params: { job: { description: @job.description, limit_date: @job.limit_date, title: @job.title, user_id: @job.user_id } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +24,7 @@ class JobsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update job" do
-    patch job_url(@job), params: { job: { description: @job.description, limit_date: @job.limit_date, title: @job.title, user_id_id: @job.user_id_id } }, as: :json
+    patch job_url(@job), params: { job: { description: @job.description, limit_date: @job.limit_date, title: @job.title, user_id: @job.user_id } }, as: :json
     assert_response :success
   end
 

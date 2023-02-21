@@ -1,5 +1,4 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_job, only: %i[ show update destroy ]
 
   # GET /jobs
@@ -47,6 +46,6 @@ class JobsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def job_params
-      params.require(:job).permit(:title, :description, :limit_date, :user_id_id)
+      params.require(:job).permit(:title, :description, :limit_date, :user_id)
     end
 end
