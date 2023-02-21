@@ -16,8 +16,9 @@ class JobsController < ApplicationController
   # POST /jobs
   def create
     @job = Job.new(job_params)
+    @job.user_id = current_user.id
 
-    if @job.save
+    if current_user.has_role?(:company) && @job.save
       render json: @job, status: :created, location: @job
     else
       render json: @job.errors, status: :unprocessable_entity
@@ -26,6 +27,7 @@ class JobsController < ApplicationController
 
   # PATCH/PUT /jobs/1
   def update
+    authorize @job
     if @job.update(job_params)
       render json: @job
     else
@@ -35,6 +37,7 @@ class JobsController < ApplicationController
 
   # DELETE /jobs/1
   def destroy
+    authorize @job
     @job.destroy
   end
 
