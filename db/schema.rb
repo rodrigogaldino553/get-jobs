@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_20_221436) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_21_200030) do
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.date "limit_date"
+    t.date "limit_date", default: "2023-03-21"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
