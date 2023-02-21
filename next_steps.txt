@@ -1,6 +1,13 @@
 Proximos passos
 
-	- atualmente estou tentando ver uma forma de permitir a crição de novos jobs apenas por parte de usuarios com role de company
+	- melhorar o pundit rolify, resolver os bug deles em api
+	- criar jobs para avisar aos proprietarios dos jobs q o job inpirou
+	- add campo de disponivel nas vagas para o proprietario marcar q a vaga foi preencehida
+
+
+	- fazer a documentação a api
+
+	[OK] atualmente estou tentando ver uma forma de permitir a crição de novos jobs apenas por parte de usuarios com role de company
 	[ok] ver o relacionamento companies jobs
 	- revisao geral pra ver se ta tudo funcionando
 		* se e possivel criar uma company
