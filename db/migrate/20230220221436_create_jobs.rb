@@ -4,7 +4,7 @@ class CreateJobs < ActiveRecord::Migration[7.0]
       t.string :title
       t.text :description
       t.date :limit_date
-      t.references :user_id, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

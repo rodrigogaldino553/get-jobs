@@ -1,6 +1,7 @@
 Proximos passos
 
-	- ver o relacionamento companies jobs
+	- atualmente estou tentando ver uma forma de permitir a crição de novos jobs apenas por parte de usuarios com role de company
+	[ok] ver o relacionamento companies jobs
 	- revisao geral pra ver se ta tudo funcionando
 		* se e possivel criar uma company
 		* se uma company consegue criar um job
